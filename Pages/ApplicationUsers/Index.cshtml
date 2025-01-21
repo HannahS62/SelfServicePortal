@@ -1,0 +1,54 @@
+@page
+@model SelfServicePortal.Pages_ApplicationUsers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationUsers[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationUsers[0].UserEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationUsers[0].Appgroup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationUsers[0].AdGroup)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ApplicationUsers) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Appgroup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdGroup)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

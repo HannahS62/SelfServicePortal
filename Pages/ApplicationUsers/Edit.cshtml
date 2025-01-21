@@ -1,0 +1,54 @@
+@page
+@model SelfServicePortal.Pages_ApplicationUsers.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ApplicationUsers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ApplicationUsers.Id" />
+            <div class="form-group">
+                
+                <label asp-for="ApplicationUsers.UserName" class="control-label"></label>
+                <input asp-for="ApplicationUsers.UserName" class="form-control" />
+                <span asp-validation-for="ApplicationUsers.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label asp-for="ApplicationUsers.UserEmail" class="control-label"></label>
+                <input asp-for="ApplicationUsers.UserEmail" class="form-control" />
+                <span asp-validation-for="ApplicationUsers.UserEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label asp-for="ApplicationUsers.Appgroup" class="control-label"></label>
+                <input asp-for="ApplicationUsers.Appgroup" class="form-control" />
+                <span asp-validation-for="ApplicationUsers.Appgroup" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                
+                <label asp-for="ApplicationUsers.AdGroup" class="control-label"></label>
+                <input asp-for="ApplicationUsers.AdGroup" class="form-control" />
+                <span asp-validation-for="ApplicationUsers.AdGroup" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

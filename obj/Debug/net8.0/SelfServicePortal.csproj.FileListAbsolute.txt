@@ -300,3 +300,4 @@ C:\Users\E644tt\documents\code\SelfServicePortal\SelfServicePortal\bin\Debug\net
 C:\Users\E644tt\documents\code\SelfServicePortal\SelfServicePortal\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\E644tt\documents\code\SelfServicePortal\SelfServicePortal\obj\Debug\net8.0\SelfServicePortal.csproj.AssemblyReference.cache
 C:\Users\E644tt\documents\code\SelfServicePortal\SelfServicePortal\obj\Debug\net8.0\SelfServ.E008D337.Up2Date
+C:\Users\E644tt\documents\code\selfserviceportal\selfserviceportal\obj\Debug\net8.0\SelfServicePortal.sourcelink.json

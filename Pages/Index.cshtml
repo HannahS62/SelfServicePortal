@@ -4,12 +4,13 @@
     ViewData["Title"] = "Home page";
 }
 
-<h1 class="display-4">Self Service Portal</h1>
+<h1 class="display-3">Self Service Portal</h1>
+
 
 <!-- Initial Buttons for App 1 and App 2 -->
-<div>
-    <button class="btn" id="app1Button" onclick="showDropdown(1)">Order Progress</button>
-    <button class="btn" id="app2Button" onclick="showDropdown(2)">Credit Request</button>
+<div class="btn-container">
+    <button class="btn-tile" id="app1Button" onclick="showDropdown(1)">Order Progress</button>
+    <button class="btn-tile" id="app2Button" onclick="showDropdown(2)">Credit Request</button>
 </div>
 
 <!-- Dropdown will be displayed based on which App button is clicked -->
@@ -106,7 +107,7 @@
         if (appId === 1) {
             // App 1 selected: Add "Order Progress" option
             formSelector.innerHTML += '<option value="1">Add an Application User</option>';
-            formSelector.innerHTML += '<option value="1">Update an existing Applicaiton User</option>';
+            formSelector.innerHTML += '<option value="2">Update an existing Applicaiton User</option>';
         } else if (appId === 2) {
             // App 2 selected: Add "Credit Request" option
             formSelector.innerHTML += '<option value="2">Add Controller</option>';

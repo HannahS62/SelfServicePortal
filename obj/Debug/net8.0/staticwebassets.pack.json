@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\E644tt\\documents\\code\\selfserviceportal\\selfserviceportal\\wwwroot\\images\\logo.jpg",
+      "PackagePath": "staticwebassets\\images\\logo.jpg"
+    },
+    {
       "Id": "C:\\Users\\E644tt\\documents\\code\\selfserviceportal\\selfserviceportal\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

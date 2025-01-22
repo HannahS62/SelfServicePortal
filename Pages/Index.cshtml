@@ -7,13 +7,27 @@
 <h1 class="display-3">Self Service Portal</h1>
 
 
+
 <!-- Initial Buttons for App 1 and App 2 -->
 <div class="btn-container">
-    <button class="btn-tile" id="app1Button" onclick="showDropdown(1)">Order Progress</button>
-    <button class="btn-tile" id="app2Button" onclick="showDropdown(2)">Credit Request</button>
+    <button class="btn-tile" id="app1Button" onclick="showDropdown(1); highlight(this)">Order Progress</button>
+    <button class="btn-tile" id="app2Button" onclick="showDropdown(2); highlight(this)">Credit Request</button>
 </div>
 
-<!-- Dropdown will be displayed based on which App button is clicked -->
+<script>
+    function highlight(button) {
+        // Reset buttons to original colour
+        const buttons = document.querySelectorAll('.btn-tile');
+        buttons.forEach(btn => btn.style.backgroundColor = '');
+        buttons.forEach(btn => btn.style.color = '');
+
+        // change colour on click
+        button.style.backgroundColor = '#002858';
+        button.style.color = 'white';
+    }
+</script>
+
+<!-- Dropdown displays based on which App button is clicked -->
 <div id="formSelectorContainer" style="display: none; margin-top: 20px;">
     <label for="formSelector">Action:</label>
     <select id="formSelector" class="form-control" onchange="showForm()">
@@ -22,7 +36,7 @@
     </select>
 </div>
 
-<!-- Forms for different options will be revealed based on dropdown selection -->
+<!-- Forms for different options show based on dropdown selection -->
 
 <div id="form1" class="form-section" style="display: none; margin-top: 20px;">
     <h3>Order Progress: </h3>

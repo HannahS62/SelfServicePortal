@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SelfServicePortal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+46c2c245bdacd59e603505bee94616e352ec5fe8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9e398cf673f2c61032ac8e936b6e908377ce5dc")]
 [assembly: System.Reflection.AssemblyProductAttribute("SelfServicePortal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SelfServicePortal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

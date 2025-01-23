@@ -4,11 +4,11 @@
     ViewData["Title"] = "Home page";
 }
 
-<h1 class="display-3">Self Service Portal</h1>
+<h1 class="display-3">Flex-E App Support</h1>
 
 
 
-<!-- Initial Buttons for App 1 and App 2 -->
+<!-- App Buttons -->
 <div class="btn-container">
     <button class="btn-tile" id="app1Button" onclick="showDropdown(1); highlight(this)">Order Progress</button>
     <button class="btn-tile" id="app2Button" onclick="showDropdown(2); highlight(this)">Credit Request</button>
@@ -16,7 +16,7 @@
 
 <script>
     function highlight(button) {
-        // Reset buttons to original colour
+        // Reset button colour
         const buttons = document.querySelectorAll('.btn-tile');
         buttons.forEach(btn => btn.style.backgroundColor = '');
         buttons.forEach(btn => btn.style.color = '');
@@ -29,22 +29,23 @@
 
 <!-- Dropdown displays based on which App button is clicked -->
 <div id="formSelectorContainer" style="display: none; margin-top: 20px;">
-    <label for="formSelector">Action:</label>
-    <select id="formSelector" class="form-control" onchange="showForm()">
-        <option value="">--Choose an action--</option>
-        <!-- Options will be dynamically added here -->
+     <select id="formSelector" class="form-control" onchange="showForm()">
+        <option value="">--Select an Action--</option>
     </select>
 </div>
 
-<!-- Forms for different options show based on dropdown selection -->
+<!-- Forms  -->
+
+<!-- Order Progress Forms  -->
+
+<!-- Add App User form  -->
 
 <div id="form1" class="form-section" style="display: none; margin-top: 20px;">
-    <h3>Order Progress: </h3>
     <form>
-        <!-- User Name Field -->
+        <!-- E ID  Field -->
         <div class="mb-3">
-            <label for="userName" class="form-label">User Name</label>
-            <input type="text" class="form-control" id="userName" name="userName" placeholder="-- LastName, FirstName --">
+            <label for="eId" class="form-label">E ID</label>
+            <input type="text" class="form-control" id="eId" name="eId">
         </div>
         
         <!-- User Email Field -->
@@ -57,7 +58,7 @@
         <div class="mb-3">
             <label for="appGroup" class="form-label">App Group</label>
             <select class="form-control" id="appGroup" name="appGroup">
-                <option value="sec0">--Choose Security Group--</option>
+                <option value="sec0">--Select Security Group--</option>
                 <option value="sec1">SecOpStandard --Branch Users--</option>
                 <option value="sec2">SecOPAll --Branch Managers--</option>
                 <option value="sec3">SecOpEdit --VA Team--</option>
@@ -65,30 +66,34 @@
         </div>
         
          <!-- Group Field (Initially hidden) -->
-        <div id="appGroupField" class="mb-3" style="display: none;">
-            <label for="appGroup" class="form-label">Group</label>
-            <input type="text" class="form-control" id="appGroup" name="appGroup">
+        <div id="groupInputField" class="mb-3" style="display: none;">
+            <label for="groupInput" class="form-label">Group</label>
+            <input type="text" class="form-control" id="groupInput" name="groupInput">
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 
+<!-- Show/Hide Group field based on App Group selection -->
 <script>
-    // Show/Hide Group field based on App Group selection
+   
     document.getElementById('appGroup').addEventListener('change', function() {
-        var groupField = document.getElementById('appGroupField');
+        var groupField = document.getElementById('groupInputField');
+         const groupInput = document.getElementById('groupInput')
         if (this.value === 'sec1') {
             groupField.style.display = 'block';
         } else {
             groupField.style.display = 'none';
+            groupInput.value = '';
         }
     });
 </script>
 
+<!-- Update existing app user -->
+
 <div id="form2" class="form-section" style="display: none; margin-top: 20px;">
-    <h3>App1 Form</h3>
-    <form>
+   <form>
         <div class="mb-3">
             <label for="orderProgress" class="form-label">App1</label>
             <input type="text" class="form-control" id="orderProgress" name="orderProgress">
@@ -96,7 +101,24 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-<div id="form2" class="form-section" style="display: none; margin-top: 20px;">
+
+<!-- Credit Request Forms -->
+
+<!-- Add Controller -->
+
+<div id="form3" class="form-section" style="display: none; margin-top: 20px;">
+    <h3>App2 Form</h3>
+    <form>
+        <div class="mb-3">
+            <label for="creditRequest" class="form-label">App2</label>
+            <input type="text" class="form-control" id="creditRequest" name="creditRequest">
+        </div>
+        <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+</div>
+<!-- Add Authroriser -->
+
+<div id="form4" class="form-section" style="display: none; margin-top: 20px;">
     <h3>App2 Form</h3>
     <form>
         <div class="mb-3">
@@ -107,42 +129,62 @@
     </form>
 </div>
 
+
 <script>
-    // Function to show the dropdown options depending on which App button is clicked
     function showDropdown(appId) {
-        // Show the dropdown container
+        // Hide all forms and clear their inputs
+        document.querySelectorAll('.form-section').forEach(form => {
+            form.style.display = 'none'; 
+
+            // Clear all inputs from form
+            form.querySelectorAll('input, select, textarea').forEach(input => {
+
+                    input.value = ''; 
+                
+            });
+        });
+
+        // Reset dropdown
+        const formSelector = document.getElementById('formSelector');
+        formSelector.value = '';
+        formSelector.innerHTML = '<option value="">--Select an action--</option>';
+
+        // Show dropdown container
         document.getElementById('formSelectorContainer').style.display = 'block';
 
-        // Clear any previous options
-        const formSelector = document.getElementById('formSelector');
-        formSelector.innerHTML = '<option value="">--Choose an action--</option>'; // Reset options
-
-        // Based on the button clicked, add the appropriate options to the dropdown
+        // Add options to dropdown based on button clicked
         if (appId === 1) {
-            // App 1 selected: Add "Order Progress" option
             formSelector.innerHTML += '<option value="1">Add an Application User</option>';
-            formSelector.innerHTML += '<option value="2">Update an existing Applicaiton User</option>';
+            formSelector.innerHTML += '<option value="2">Update an Existing Application User</option>';
         } else if (appId === 2) {
-            // App 2 selected: Add "Credit Request" option
-            formSelector.innerHTML += '<option value="2">Add Controller</option>';
-            formSelector.innerHTML += '<option value="2">Add Auhtoriser</option>';
+            formSelector.innerHTML += '<option value="3">Add Controller</option>';
+            formSelector.innerHTML += '<option value="4">Add Authoriser</option>';
         }
     }
 
-    // Function to show the relevant form based on dropdown selection
     function showForm() {
         const selectedValue = document.getElementById('formSelector').value;
 
-        // Hide all forms first
-        document.getElementById('form1').style.display = 'none';
-        document.getElementById('form2').style.display = 'none';
+        // Hide all forms
+        document.querySelectorAll('.form-section').forEach(form => {
+            form.style.display = 'none';
+        });
 
+        // Show the selected form
+        if (selectedValue === '1') document.getElementById('form1').style.display = 'block';
+        if (selectedValue === '2') document.getElementById('form2').style.display = 'block';
+        if (selectedValue === '3') document.getElementById('form3').style.display = 'block';
+        if (selectedValue === '4') document.getElementById('form4').style.display = 'block';
+    }
 
-        // Show the relevant form based on the selected value
-        if (selectedValue === '1') {
-            document.getElementById('form1').style.display = 'block';
-        } else if (selectedValue === '2') {
-            document.getElementById('form2').style.display = 'block';
+    function toggleGroupInput() {
+        const appGroup = document.getElementById('appGroup').value;
+        const groupInputField = document.getElementById('groupInputField');
+        
+        if (appGroup === 'sec1') groupInputField.style.display = 'block';
+        else {
+            groupInputField.style.display = 'none';
+            document.getElementById('groupInput').value = '';
         }
     }
 </script>

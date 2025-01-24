@@ -47,28 +47,26 @@
             <label for="eId" class="form-label">E ID</label>
             <input type="text" class="form-control" id="eId" name="eId">
         </div>
-        
-        <!-- User Email Field -->
-        <div class="mb-3">
-            <label for="userEmail" class="form-label">User Email</label>
-            <input type="email" class="form-control" id="userEmail" name="userEmail"placeholder="-- firstName.lastName@em.com --">
-        </div>
-        
+                
         <!-- App Group Dropdown -->
         <div class="mb-3">
-            <label for="appGroup" class="form-label">App Group</label>
+            <label for="appGroup" class="form-label">User Type</label>
             <select class="form-control" id="appGroup" name="appGroup">
-                <option value="sec0">--Select Security Group--</option>
-                <option value="sec1">SecOpStandard --Branch Users--</option>
-                <option value="sec2">SecOPAll --Branch Managers--</option>
-                <option value="sec3">SecOpEdit --VA Team--</option>
+                <option value="sec0">--Select User Type--</option>
+                <option value="sec1">User</option>
+                <option value="sec2">Manager/ Assistant Manager</option>
+                <option value="sec3">VA</option>
             </select>
         </div>
-        
-         <!-- Group Field (Initially hidden) -->
-        <div id="groupInputField" class="mb-3" style="display: none;">
-            <label for="groupInput" class="form-label">Group</label>
-            <input type="text" class="form-control" id="groupInput" name="groupInput">
+          <!-- Branch TEST (Initially hidden) -->
+        <div class="mb-3" id="branchField" style="display: none;">
+            <label for="branch" class="form-label">Branch</label>
+            <select class="form-control" id="branch" name="branch">
+                <option value="loc0">--Select Branch Location--</option>
+                <option value="loc1">Norwich</option>
+                <option value="loc2">Bristol</option>
+                <option value="loc3">Shrewsbury</option>
+            </select>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -79,15 +77,15 @@
 <script>
    
     document.getElementById('appGroup').addEventListener('change', function() {
-        var groupField = document.getElementById('groupInputField');
-         const groupInput = document.getElementById('groupInput')
+     var branchField = document.getElementById('branchField');
         if (this.value === 'sec1') {
-            groupField.style.display = 'block';
+            branchField.style.display = 'block';
         } else {
-            groupField.style.display = 'none';
-            groupInput.value = '';
+            branchField.style.display = 'none';
+            document.getElementById('branch').value = 'loc0';
         }
     });
+    document.getElementById('branchField').style.display = 'none';
 </script>
 
 <!-- Update existing app user -->
@@ -138,10 +136,13 @@
 
             // Clear all inputs from form
             form.querySelectorAll('input, select, textarea').forEach(input => {
-
+                    if (input.tagName === 'SELECT') {
+                        input.value = 'sec0'
+                    } else {
                     input.value = ''; 
-                
-            });
+                    }
+             });
+            document.getElementById('branchField').style.display = 'none'; //hides branch field
         });
 
         // Reset dropdown
@@ -179,12 +180,12 @@
 
     function toggleGroupInput() {
         const appGroup = document.getElementById('appGroup').value;
-        const groupInputField = document.getElementById('groupInputField');
+        const branchField = document.getElementById('branchField');
         
-        if (appGroup === 'sec1') groupInputField.style.display = 'block';
+        if (appGroup === 'sec1') branchField.style.display = 'block';
         else {
-            groupInputField.style.display = 'none';
-            document.getElementById('groupInput').value = '';
+            branchField.style.display = 'none';
+            document.getElementById('branchField').value = '';
         }
     }
 </script>

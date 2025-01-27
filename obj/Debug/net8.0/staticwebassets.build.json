@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VhdCzJJl1mTJIRnB/hX31C4w4trTyJti1qjqiFX6Wqo=",
+  "Hash": "yl2Kglpi+9+ROFjALmpFF6fhnVDQ+qq0555NrG1UktM=",
   "Source": "SelfServicePortal",
   "BasePath": "_content/SelfServicePortal",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\E644tt\\documents\\code\\selfserviceportal\\selfserviceportal\\wwwroot\\images\\em.jpg",
+      "SourceId": "SelfServicePortal",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\E644tt\\documents\\code\\selfserviceportal\\selfserviceportal\\wwwroot\\",
+      "BasePath": "_content/SelfServicePortal",
+      "RelativePath": "images/em.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\em.jpg"
     },
     {
       "Identity": "C:\\Users\\E644tt\\documents\\code\\selfserviceportal\\selfserviceportal\\wwwroot\\images\\logo.jpg",

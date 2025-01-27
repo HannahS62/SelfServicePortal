@@ -4,15 +4,140 @@
     ViewData["Title"] = "Home page";
 }
 
-<h1 class="display-3">Flex-E App Support</h1>
-
-
+<h1>Flex-E App Support</h1>
 
 <!-- App Buttons -->
 <div class="btn-container">
     <button class="btn-tile" id="app1Button" onclick="showDropdown(1); highlight(this)">Order Progress</button>
     <button class="btn-tile" id="app2Button" onclick="showDropdown(2); highlight(this)">Credit Request</button>
 </div>
+
+<!-- Dropdown container -->
+<div id="formSelectorContainer" class="formBox" style="display: none; margin-top: 20px;">
+    <select id="formSelector" class="form-control" onchange="showForm()">
+        <option value="">--Select an Action--</option>
+    </select>
+</div>
+
+<!-- Forms -->
+
+<!-- Order Progress Forms -->
+<div id="form1" class="form-section" style="display: none; margin-top: 20px;">
+    <form>
+        <div class="mb-3">
+            <label for="eId1" class="form-label">E ID</label>
+            <input type="text" class="form-control" id="eId1" name="eId">
+        </div>
+        <div class="mb-3">
+            <label for="appGroup1" class="form-label">User Role</label>
+            <select class="form-control" id="appGroup1" name="appGroup">
+                <option value="sec0">--Select User Role--</option>
+                <option value="sec1">User</option>
+                <option value="sec2">Manager/ Assistant Manager</option>
+                <option value="sec3">VA</option>
+            </select>
+        </div>
+        <div class="mb-3" id="branchField1" style="display: none;">
+            <label for="branch1" class="form-label">Branch</label>
+            <select class="form-control" id="branch1" name="branch">
+                <option value="loc0">--Select Branch Location--</option>
+                <option value="loc1">Norwich</option>
+                <option value="loc2">Bristol</option>
+                <option value="loc3">Shrewsbury</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Update User Role Form -->
+<div id="form2" class="form-section" style="display: none; margin-top: 20px;">
+    <form>
+        <div class="mb-3">
+            <label for="eId2" class="form-label"> E ID</label>
+            <input type="text" class="form-control" id="eId2" name="EId">
+        </div>
+        <div class="mb-3">
+            <label for="appGroup2" class="form-label">User Role</label>
+            <select class="form-control" id="appGroup2" name="appGroup">
+                <option value="sec0">--Select User Role--</option>
+                <option value="sec1">User</option>
+                <option value="sec2">Manager/ Assistant Manager</option>
+                <option value="sec3">VA</option>
+            </select>
+        </div>
+        <div class="mb-3" id="branchField2" style="display: none;">
+            <label for="branch2" class="form-label">Branch</label>
+            <select class="form-control" id="branch2" name="branch">
+                <option value="loc0">--Select Branch Location--</option>
+                <option value="loc1">Norwich</option>
+                <option value="loc2">Bristol</option>
+                <option value="loc3">Shrewsbury</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Update User Location Form -->
+<div id="form3" class="form-section" style="display: none; margin-top: 20px;">
+    <form>
+        <div class="mb-3">
+            <label for="eId3" class="form-label">E ID</label>
+            <input type="text" class="form-control" id="eId3" name="eId">
+        </div>
+        <div class="mb-3">
+            <label for="branch3" class="form-label">Branch</label>
+            <select class="form-control" id="branch3" name="branch">
+                <option value="loc0">--Select User Branch--</option>
+                <option value="loc1">Norwich</option>
+                <option value="loc2">Exeter</option>
+                <option value="loc3">Heathrow</option>
+           </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+<!-- Credit Request Forms -->
+
+
+<!-- Add Controller -->
+<div id="form4" class="form-section" style="display: none; margin-top: 20px;">
+      <form>
+        <div class="mb-3">
+            <label for="eId4" class="form-label"> E ID</label>
+            <input type="text" class="form-control" id="eId4" name="EId">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+<!-- Add Authoriser -->
+<div id="form5" class="form-section" style="display: none; margin-top: 20px;">
+      <form>
+        <div class="mb-3">
+            <label for="eId5" class="form-label"> E ID</label>
+            <input type="text" class="form-control" id="eId5" name="EId">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Update Authorisor in-use flag -->
+<div id="form6" class="form-section" style="display: none; margin-top: 20px;">
+      <form>
+        <div class="mb-3">
+            <label for="eId6" class="form-label"> E ID</label>
+            <input type="text" class="form-control" id="eId6" name="EId">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
 
 <script>
     function highlight(button) {
@@ -25,167 +150,79 @@
         button.style.backgroundColor = '#002858';
         button.style.color = 'white';
     }
-</script>
-
-<!-- Dropdown displays based on which App button is clicked -->
-<div id="formSelectorContainer" style="display: none; margin-top: 20px;">
-     <select id="formSelector" class="form-control" onchange="showForm()">
-        <option value="">--Select an Action--</option>
-    </select>
-</div>
-
-<!-- Forms  -->
-
-<!-- Order Progress Forms  -->
-
-<!-- Add App User form  -->
-
-<div id="form1" class="form-section" style="display: none; margin-top: 20px;">
-    <form>
-        <!-- E ID  Field -->
-        <div class="mb-3">
-            <label for="eId" class="form-label">E ID</label>
-            <input type="text" class="form-control" id="eId" name="eId">
-        </div>
-                
-        <!-- App Group Dropdown -->
-        <div class="mb-3">
-            <label for="appGroup" class="form-label">User Type</label>
-            <select class="form-control" id="appGroup" name="appGroup">
-                <option value="sec0">--Select User Type--</option>
-                <option value="sec1">User</option>
-                <option value="sec2">Manager/ Assistant Manager</option>
-                <option value="sec3">VA</option>
-            </select>
-        </div>
-          <!-- Branch TEST (Initially hidden) -->
-        <div class="mb-3" id="branchField" style="display: none;">
-            <label for="branch" class="form-label">Branch</label>
-            <select class="form-control" id="branch" name="branch">
-                <option value="loc0">--Select Branch Location--</option>
-                <option value="loc1">Norwich</option>
-                <option value="loc2">Bristol</option>
-                <option value="loc3">Shrewsbury</option>
-            </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
-
-<!-- Show/Hide Group field based on App Group selection -->
-<script>
-   
-    document.getElementById('appGroup').addEventListener('change', function() {
-     var branchField = document.getElementById('branchField');
-        if (this.value === 'sec1') {
-            branchField.style.display = 'block';
-        } else {
-            branchField.style.display = 'none';
-            document.getElementById('branch').value = 'loc0';
-        }
-    });
-    document.getElementById('branchField').style.display = 'none';
-</script>
-
-<!-- Update existing app user -->
-
-<div id="form2" class="form-section" style="display: none; margin-top: 20px;">
-   <form>
-        <div class="mb-3">
-            <label for="orderProgress" class="form-label">App1</label>
-            <input type="text" class="form-control" id="orderProgress" name="orderProgress">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-</div>
-
-<!-- Credit Request Forms -->
-
-<!-- Add Controller -->
-
-<div id="form3" class="form-section" style="display: none; margin-top: 20px;">
-    <h3>App2 Form</h3>
-    <form>
-        <div class="mb-3">
-            <label for="creditRequest" class="form-label">App2</label>
-            <input type="text" class="form-control" id="creditRequest" name="creditRequest">
-        </div>
-        <button type="submit" class="btn btn-secondary">Submit</button>
-    </form>
-</div>
-<!-- Add Authroriser -->
-
-<div id="form4" class="form-section" style="display: none; margin-top: 20px;">
-    <h3>App2 Form</h3>
-    <form>
-        <div class="mb-3">
-            <label for="creditRequest" class="form-label">App2</label>
-            <input type="text" class="form-control" id="creditRequest" name="creditRequest">
-        </div>
-        <button type="submit" class="btn btn-secondary">Submit</button>
-    </form>
-</div>
 
 
-<script>
+
     function showDropdown(appId) {
         // Hide all forms and clear their inputs
         document.querySelectorAll('.form-section').forEach(form => {
             form.style.display = 'none'; 
 
             // Clear all inputs from form
-            form.querySelectorAll('input, select, textarea').forEach(input => {
-                    if (input.tagName === 'SELECT') {
-                        input.value = 'sec0'
-                    } else {
-                    input.value = ''; 
-                    }
-             });
-            document.getElementById('branchField').style.display = 'none'; //hides branch field
+            form.querySelectorAll('input, select').forEach(input => {
+                if (input.tagName === 'SELECT') {
+                    input.value = 'sec0' || 'loc0'; // Reset select to default
+                } else {
+                    input.value = ''; // Clear text inputs
+                }
+            });
         });
 
-        // Reset dropdown
-        const formSelector = document.getElementById('formSelector');
-        formSelector.value = '';
-        formSelector.innerHTML = '<option value="">--Select an action--</option>';
-
-        // Show dropdown container
+        // Show the form selector container
         document.getElementById('formSelectorContainer').style.display = 'block';
 
-        // Add options to dropdown based on button clicked
+        // Populate dropdown with options based on appId
+        const formSelector = document.getElementById('formSelector');
+        formSelector.innerHTML = '<option value="">--Select an Action--</option>'; // Reset the dropdown
+
         if (appId === 1) {
             formSelector.innerHTML += '<option value="1">Add an Application User</option>';
-            formSelector.innerHTML += '<option value="2">Update an Existing Application User</option>';
+            formSelector.innerHTML += '<option value="2">Update User Role</option>';
+            formSelector.innerHTML += '<option value="3">Update User Branch</option>';
+
         } else if (appId === 2) {
-            formSelector.innerHTML += '<option value="3">Add Controller</option>';
-            formSelector.innerHTML += '<option value="4">Add Authoriser</option>';
+            formSelector.innerHTML += '<option value="4">Add Controller</option>';
+            formSelector.innerHTML += '<option value="5">Add Authoriser</option>';
+            formSelector.innerHTML += '<option value="6">Update Authoriser in-use flag</option>';
         }
     }
 
     function showForm() {
         const selectedValue = document.getElementById('formSelector').value;
-
+        console.log('Selected value:', selectedValue);
+    
         // Hide all forms
         document.querySelectorAll('.form-section').forEach(form => {
             form.style.display = 'none';
         });
 
-        // Show the selected form
-        if (selectedValue === '1') document.getElementById('form1').style.display = 'block';
-        if (selectedValue === '2') document.getElementById('form2').style.display = 'block';
-        if (selectedValue === '3') document.getElementById('form3').style.display = 'block';
-        if (selectedValue === '4') document.getElementById('form4').style.display = 'block';
-    }
+    // Show the selected form based on the dropdown value
+    if (selectedValue === '1') document.getElementById('form1').style.display = 'block';
+    if (selectedValue === '2') document.getElementById('form2').style.display = 'block';
+    if (selectedValue === '3') document.getElementById('form3').style.display = 'block';
+    if (selectedValue === '4') document.getElementById('form4').style.display = 'block';
+    if (selectedValue === '5') document.getElementById('form5').style.display = 'block';
+    if (selectedValue === '6') document.getElementById('form6').style.display = 'block';
+ 
 
-    function toggleGroupInput() {
-        const appGroup = document.getElementById('appGroup').value;
-        const branchField = document.getElementById('branchField');
-        
-        if (appGroup === 'sec1') branchField.style.display = 'block';
-        else {
-            branchField.style.display = 'none';
-            document.getElementById('branchField').value = '';
+
+
+        function addBranchToggle(appGroupId, branchFieldId, branchId) {
+            document.getElementById(appGroupId).addEventListener('change', function () {
+                var branchField = document.getElementById(branchFieldId);
+                if (this.value === 'sec1') {
+                    branchField.style.display = 'block';
+                } else {
+                    branchField.style.display = 'none';
+                    document.getElementById(branchId).value = 'loc0';
+                }
+            });
         }
+
+        // Add toggle functionality for both forms
+        addBranchToggle('appGroup1', 'branchField1', 'branch1');
+        addBranchToggle('appGroup2', 'branchField2', 'branch2');
     }
 </script>
+
+

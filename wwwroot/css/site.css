@@ -13,7 +13,7 @@ html {
 .btn-link.nav-link:focus,
 .form-control:focus,
 .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #002580;
 }
 
 html {
@@ -26,8 +26,11 @@ body {
 }
 
 h1 {
-  text-shadow: #258cfb;
+  margin: 2rem;
+  text-shadow: #002580;
   text-align: center;
+  color: #002580;
+  font-size: xx-large;
 }
 
 .btn-container {
@@ -35,28 +38,37 @@ h1 {
   justify-content: center;
   height: 100px;
   margin-top: 30px;
+  max-width: 50rem;
+  margin: 0 auto;
 }
 
 .btn-tile {
-  border: 1px solid #0a304d;
+  border: 1px solid #002580;
   border-radius: 20px;
   box-shadow: #0a304d 0px 8px 18px 0px;
   background-color: white;
-  padding: 30px;
-  margin: 10px;
+  margin: 1rem;
   color: #002580;
-  font-weight: 20px;
+  font-weight: 450;
+  font-size: medium;
+  width: 40rem;
 }
 .header {
-  background-color: #0a304d;
+  background-color: #002580;
   color: white;
 }
 .footer {
-  background-color: #0a304d;
+  background-color: #002580;
   color: white;
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}
+
+.btn-primary {
+  background-color: #002580;
+  border-color: #002580;
+  border-radius: 10px;
 }

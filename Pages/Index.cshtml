@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home page";
 }
 
-<h1>Flex-E App Support</h1>
+<h1>Flex-E-Rent App Support</h1>
 
 <!-- App Buttons -->
 <div class="btn-container">
@@ -13,23 +13,28 @@
 </div>
 
 <!-- Dropdown container -->
-<div id="formSelectorContainer" class="formBox" style="display: none; margin-top: 20px;">
+
+<div id="formSelectorContainer" class="formBox dropDownContainer" style="display: none; margin-top: 20px;">
     <select id="formSelector" class="form-control" onchange="showForm()">
         <option value="">--Select an Action--</option>
     </select>
 </div>
 
-<!-- Forms -->
 
+<!-- Forms -->
 <!-- Order Progress Forms -->
-<div id="form1" class="form-section" style="display: none; margin-top: 20px;">
+<div id="form1" class="form-section formContainer " style="display: none; margin-top: 20px;">
     <form>
         <div class="mb-3">
-            <label for="eId1" class="form-label">E ID</label>
+            <label for="inc1" class="form-label">INC Number:</label>
+            <input type="text" class="form-control" id="inc1" name="inc">
+        </div>
+        <div class="mb-3">
+            <label for="eId1" class="form-label">E ID:</label>
             <input type="text" class="form-control" id="eId1" name="eId">
         </div>
         <div class="mb-3">
-            <label for="appGroup1" class="form-label">User Role</label>
+            <label for="appGroup1" class="form-label">User Role:</label>
             <select class="form-control" id="appGroup1" name="appGroup">
                 <option value="sec0">--Select User Role--</option>
                 <option value="sec1">User</option>
@@ -38,7 +43,7 @@
             </select>
         </div>
         <div class="mb-3" id="branchField1" style="display: none;">
-            <label for="branch1" class="form-label">Branch</label>
+            <label for="branch1" class="form-label">Branch:</label>
             <select class="form-control" id="branch1" name="branch">
                 <option value="loc0">--Select Branch Location--</option>
                 <option value="loc1">Norwich</option>
@@ -51,14 +56,18 @@
 </div>
 
 <!-- Update User Role Form -->
-<div id="form2" class="form-section" style="display: none; margin-top: 20px;">
+<div id="form2" class="form-section formContainer" style="display: none; margin-top: 20px;">
     <form>
         <div class="mb-3">
-            <label for="eId2" class="form-label"> E ID</label>
+            <label for="inc2" class="form-label">INC Number:</label>
+            <input type="text" class="form-control" id="inc2" name="inc">
+        </div>        
+        <div class="mb-3">
+            <label for="eId2" class="form-label"> E ID:</label>
             <input type="text" class="form-control" id="eId2" name="EId">
         </div>
         <div class="mb-3">
-            <label for="appGroup2" class="form-label">User Role</label>
+            <label for="appGroup2" class="form-label">User Role:</label>
             <select class="form-control" id="appGroup2" name="appGroup">
                 <option value="sec0">--Select User Role--</option>
                 <option value="sec1">User</option>
@@ -67,7 +76,7 @@
             </select>
         </div>
         <div class="mb-3" id="branchField2" style="display: none;">
-            <label for="branch2" class="form-label">Branch</label>
+            <label for="branch2" class="form-label">Branch:</label>
             <select class="form-control" id="branch2" name="branch">
                 <option value="loc0">--Select Branch Location--</option>
                 <option value="loc1">Norwich</option>
@@ -80,14 +89,18 @@
 </div>
 
 <!-- Update User Location Form -->
-<div id="form3" class="form-section" style="display: none; margin-top: 20px;">
+<div id="form3" class="form-section formContainer" style="display: none; margin-top: 20px;">
     <form>
         <div class="mb-3">
-            <label for="eId3" class="form-label">E ID</label>
+            <label for="inc3" class="form-label">INC Number:</label>
+            <input type="text" class="form-control" id="inc3" name="inc">
+        </div>        
+        <div class="mb-3">
+            <label for="eId3" class="form-label">E ID:</label>
             <input type="text" class="form-control" id="eId3" name="eId">
         </div>
         <div class="mb-3">
-            <label for="branch3" class="form-label">Branch</label>
+            <label for="branch3" class="form-label">Branch:</label>
             <select class="form-control" id="branch3" name="branch">
                 <option value="loc0">--Select User Branch--</option>
                 <option value="loc1">Norwich</option>
@@ -104,10 +117,14 @@
 
 
 <!-- Add Controller -->
-<div id="form4" class="form-section" style="display: none; margin-top: 20px;">
+<div id="form4" class="form-section formContainer" style="display: none; margin-top: 20px;">
       <form>
         <div class="mb-3">
-            <label for="eId4" class="form-label"> E ID</label>
+            <label for="inc4" class="form-label">INC Number:</label>
+            <input type="text" class="form-control" id="inc4" name="inc">
+        </div>        
+        <div class="mb-3">
+            <label for="eId4" class="form-label"> E ID:</label>
             <input type="text" class="form-control" id="eId4" name="EId">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -116,10 +133,14 @@
 
 
 <!-- Add Authoriser -->
-<div id="form5" class="form-section" style="display: none; margin-top: 20px;">
+<div id="form5" class="form-section formContainer" style="display: none; margin-top: 20px;">
       <form>
         <div class="mb-3">
-            <label for="eId5" class="form-label"> E ID</label>
+            <label for="inc5" class="form-label">INC Number:</label>
+            <input type="text" class="form-control" id="inc5" name="inc">
+        </div>        
+        <div class="mb-3">
+            <label for="eId5" class="form-label"> E ID:</label>
             <input type="text" class="form-control" id="eId5" name="EId">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -127,16 +148,19 @@
 </div>
 
 <!-- Update Authorisor in-use flag -->
-<div id="form6" class="form-section" style="display: none; margin-top: 20px;">
+<div id="form6" class="form-section formContainer" style="display: none; margin-top: 20px;">
       <form>
         <div class="mb-3">
-            <label for="eId6" class="form-label"> E ID</label>
+            <label for="inc6" class="form-label">INC Number:</label>
+            <input type="text" class="form-control" id="inc6" name="inc">
+        </div>        
+        <div class="mb-3">
+            <label for="eId6" class="form-label"> E ID:</label>
             <input type="text" class="form-control" id="eId6" name="EId">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
-
 
 
 <script>
@@ -152,21 +176,28 @@
     }
 
 
+function showDropdown(appId) {
+    // Hide all forms 
+    document.querySelectorAll('.form-section').forEach(form => {
+        form.style.display = 'none'; 
 
-    function showDropdown(appId) {
-        // Hide all forms and clear their inputs
-        document.querySelectorAll('.form-section').forEach(form => {
-            form.style.display = 'none'; 
-
-            // Clear all inputs from form
-            form.querySelectorAll('input, select').forEach(input => {
-                if (input.tagName === 'SELECT') {
-                    input.value = 'sec0' || 'loc0'; // Reset select to default
-                } else {
-                    input.value = ''; // Clear text inputs
+        // Clear all inputs from form
+        form.querySelectorAll('input, select, textarea').forEach(input => {
+            if (input.tagName === 'SELECT') {
+                // Reset select 
+                if (input.id.includes('appGroup')) {
+                    input.value = 'sec0'; 
                 }
-            });
+                if (input.id.includes('branch1')) {
+                    input.value = 'loc0';   
+                }
+            } else if (input.tagName === 'INPUT' || input.tagName === 'TEXTAREA') {
+                input.value = ''; 
+            }
         });
+    }); 
+
+
 
         // Show the form selector container
         document.getElementById('formSelectorContainer').style.display = 'block';
@@ -210,14 +241,17 @@
         function addBranchToggle(appGroupId, branchFieldId, branchId) {
             document.getElementById(appGroupId).addEventListener('change', function () {
                 var branchField = document.getElementById(branchFieldId);
+                var branchDropdown = document.getElementById(branchId);
                 if (this.value === 'sec1') {
                     branchField.style.display = 'block';
+                    branchDropdown.value = 'loc0'
                 } else {
                     branchField.style.display = 'none';
                     document.getElementById(branchId).value = 'loc0';
                 }
             });
         }
+
 
         // Add toggle functionality for both forms
         addBranchToggle('appGroup1', 'branchField1', 'branch1');

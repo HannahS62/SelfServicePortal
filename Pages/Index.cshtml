@@ -147,13 +147,22 @@
     </form>
 </div>
 
-<!-- Update Authorisor in-use flag -->
+<!-- Assign Team Leader to Branch -->
 <div id="form6" class="form-section formContainer" style="display: none; margin-top: 20px;">
       <form>
         <div class="mb-3">
             <label for="inc6" class="form-label">INC Number:</label>
             <input type="text" class="form-control" id="inc6" name="inc">
-        </div>        
+        </div>  
+        <div class="mb-3">
+            <label for="branch6" class="form-label">Branch:</label>
+            <select class="form-control" id="branch6" name="branch">
+                <option value="loc0">--Select User Branch--</option>
+                <option value="loc1">Norwich</option>
+                <option value="loc2">Exeter</option>
+                <option value="loc3">Heathrow</option>
+           </select>
+        </div>              
         <div class="mb-3">
             <label for="eId6" class="form-label"> E ID:</label>
             <input type="text" class="form-control" id="eId6" name="EId">
@@ -214,7 +223,7 @@ function showDropdown(appId) {
         } else if (appId === 2) {
             formSelector.innerHTML += '<option value="4">Add Controller</option>';
             formSelector.innerHTML += '<option value="5">Add Authoriser</option>';
-            formSelector.innerHTML += '<option value="6">Update Authoriser in-use flag</option>';
+            formSelector.innerHTML += '<option value="6">Assign Team Leader to Branch</option>';
         }
     }
 
